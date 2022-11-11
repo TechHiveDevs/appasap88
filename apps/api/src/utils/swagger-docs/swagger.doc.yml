@@ -1,0 +1,575 @@
+
+  /evaluationanswers:
+    get:
+     summary: Get all evaluationanswerss
+     tags: [evaluationanswers]
+     responses:
+       200:
+        schema:
+          $ref: '#/components/schemas/evaluationanswers'
+ 
+    post:
+      summary: Create evaluationanswers
+      tags: [evaluationanswers]
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/evaluationanswers'
+      responses:
+        201:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/evaluationanswers'
+ 
+  /evaluationanswers/{id}:
+    get:
+      summary: Get evaluationanswers by id
+      tags: [evaluationanswers]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/evaluationanswers'
+ 
+    put:
+      summary: Edit evaluationanswers
+      tags: [evaluationanswers]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/evaluationanswers'
+      requestBody:
+        content:
+            application/json:
+              schema:
+               $ref: '#/components/schemas/evaluationanswers'
+ 
+    delete:
+      summary: Delete evaluationanswers
+      tags: [evaluationanswers]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/evaluationanswers'
+
+  /evaluationquestions:
+    get:
+     summary: Get all evaluationquestionss
+     tags: [evaluationquestions]
+     responses:
+       200:
+        schema:
+          $ref: '#/components/schemas/evaluationquestions'
+ 
+    post:
+      summary: Create evaluationquestions
+      tags: [evaluationquestions]
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/evaluationquestions'
+      responses:
+        201:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/evaluationquestions'
+ 
+  /evaluationquestions/{id}:
+    get:
+      summary: Get evaluationquestions by id
+      tags: [evaluationquestions]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/evaluationquestions'
+ 
+    put:
+      summary: Edit evaluationquestions
+      tags: [evaluationquestions]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/evaluationquestions'
+      requestBody:
+        content:
+            application/json:
+              schema:
+               $ref: '#/components/schemas/evaluationquestions'
+ 
+    delete:
+      summary: Delete evaluationquestions
+      tags: [evaluationquestions]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/evaluationquestions'
+
+  /evaluationforms:
+    get:
+     summary: Get all evaluationformss
+     tags: [evaluationforms]
+     responses:
+       200:
+        schema:
+          $ref: '#/components/schemas/evaluationforms'
+ 
+    post:
+      summary: Create evaluationforms
+      tags: [evaluationforms]
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/evaluationforms'
+      responses:
+        201:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/evaluationforms'
+ 
+  /evaluationforms/{id}:
+    get:
+      summary: Get evaluationforms by id
+      tags: [evaluationforms]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/evaluationforms'
+ 
+    put:
+      summary: Edit evaluationforms
+      tags: [evaluationforms]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/evaluationforms'
+      requestBody:
+        content:
+            application/json:
+              schema:
+               $ref: '#/components/schemas/evaluationforms'
+ 
+    delete:
+      summary: Delete evaluationforms
+      tags: [evaluationforms]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/evaluationforms'
+
+  /blankevaluationform:
+    get:
+     summary: Get all blankevaluationforms
+     tags: [blankevaluationform]
+     responses:
+       200:
+        schema:
+          $ref: '#/components/schemas/blankevaluationform'
+ 
+    post:
+      summary: Create blankevaluationform
+      tags: [blankevaluationform]
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/blankevaluationform'
+      responses:
+        201:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/blankevaluationform'
+ 
+  /blankevaluationform/{id}:
+    get:
+      summary: Get blankevaluationform by id
+      tags: [blankevaluationform]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/blankevaluationform'
+ 
+    put:
+      summary: Edit blankevaluationform
+      tags: [blankevaluationform]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/blankevaluationform'
+      requestBody:
+        content:
+            application/json:
+              schema:
+               $ref: '#/components/schemas/blankevaluationform'
+ 
+    delete:
+      summary: Delete blankevaluationform
+      tags: [blankevaluationform]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/blankevaluationform'
+
+  /trainingqualifications:
+    get:
+     summary: Get all trainingqualificationss
+     tags: [trainingqualifications]
+     responses:
+       200:
+        schema:
+          $ref: '#/components/schemas/trainingqualifications'
+ 
+    post:
+      summary: Create trainingqualifications
+      tags: [trainingqualifications]
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/trainingqualifications'
+      responses:
+        201:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/trainingqualifications'
+ 
+  /trainingqualifications/{id}:
+    get:
+      summary: Get trainingqualifications by id
+      tags: [trainingqualifications]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/trainingqualifications'
+ 
+    put:
+      summary: Edit trainingqualifications
+      tags: [trainingqualifications]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/trainingqualifications'
+      requestBody:
+        content:
+            application/json:
+              schema:
+               $ref: '#/components/schemas/trainingqualifications'
+ 
+    delete:
+      summary: Delete trainingqualifications
+      tags: [trainingqualifications]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/trainingqualifications'
+
+  /trainers:
+    get:
+     summary: Get all trainerss
+     tags: [trainers]
+     responses:
+       200:
+        schema:
+          $ref: '#/components/schemas/trainers'
+ 
+    post:
+      summary: Create trainers
+      tags: [trainers]
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/trainers'
+      responses:
+        201:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/trainers'
+ 
+  /trainers/{id}:
+    get:
+      summary: Get trainers by id
+      tags: [trainers]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/trainers'
+ 
+    put:
+      summary: Edit trainers
+      tags: [trainers]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/trainers'
+      requestBody:
+        content:
+            application/json:
+              schema:
+               $ref: '#/components/schemas/trainers'
+ 
+    delete:
+      summary: Delete trainers
+      tags: [trainers]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/trainers'
+
+  /trainingcourses:
+    get:
+     summary: Get all trainingcoursess
+     tags: [trainingcourses]
+     responses:
+       200:
+        schema:
+          $ref: '#/components/schemas/trainingcourses'
+ 
+    post:
+      summary: Create trainingcourses
+      tags: [trainingcourses]
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/trainingcourses'
+      responses:
+        201:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/trainingcourses'
+ 
+  /trainingcourses/{id}:
+    get:
+      summary: Get trainingcourses by id
+      tags: [trainingcourses]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/trainingcourses'
+ 
+    put:
+      summary: Edit trainingcourses
+      tags: [trainingcourses]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/trainingcourses'
+      requestBody:
+        content:
+            application/json:
+              schema:
+               $ref: '#/components/schemas/trainingcourses'
+ 
+    delete:
+      summary: Delete trainingcourses
+      tags: [trainingcourses]
+      parameters:
+        - in: path
+          name: id
+      responses:
+        202:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/trainingcourses'
+
+  components:
+    schemas:
+  
+      evaluationanswers:
+        type: object
+        properties:
+      
+          id:
+            type: number
+          answertext:
+            type: string
+          evaluationquestions:
+            type: string
+          evaluationforms:
+            type: string
+      evaluationquestions:
+        type: object
+        properties:
+      
+          id:
+            type: number
+          qusetiontext:
+            type: string
+          questiondescription:
+            type: string
+      evaluationforms:
+        type: object
+        properties:
+      
+          id:
+            type: number
+          evaluationdate:
+            type: string
+          evaluationtext:
+            type: string
+          evaluationtype:
+            type: string
+          blankevaluationform:
+            type: string
+          trainingcourses:
+            type: string
+          trainers:
+            type: string
+      blankevaluationform:
+        type: object
+        properties:
+      
+          id:
+            type: number
+          name:
+            type: string
+          text:
+            type: string
+          formcategories:
+            type: string
+      trainingqualifications:
+        type: object
+        properties:
+      
+          id:
+            type: number
+          name:
+            type: string
+          description:
+            type: string
+          trainers:
+            type: string
+      trainers:
+        type: object
+        properties:
+      
+          id:
+            type: number
+          firstname:
+            type: string
+          lastname:
+            type: string
+          contactint:
+            type: number
+          trainingcourses:
+            type: string
+      trainingcourses:
+        type: object
+        properties:
+      
+          id:
+            type: number
+          name:
+            type: string
+          description:
+            type: string

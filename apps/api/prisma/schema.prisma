@@ -1,0 +1,117 @@
+datasource db {
+  provider = "mysql"
+  url      = env("DB_URL")
+}
+
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+
+model Trainingcourses {
+  id               Int               @id @default(autoincrement())
+  name             String
+  description      String?
+  trainerss        Trainers[]
+  evaluationformss Evaluationforms[]
+  createdAt        DateTime          @default(now())
+  updatedAt        DateTime          @default(now()) @updatedAt
+}
+
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+
+model Trainers {
+  id                      Int                      @id @default(autoincrement())
+  firstname               String
+  lastname                String
+  contactint              Int
+  trainingcourses         Trainingcourses?         @relation(fields: [trainingcoursesid], references: [id])
+  trainingcoursesid       Int?
+  trainingqualificationss Trainingqualifications[]
+  evaluationformss        Evaluationforms[]
+  createdAt               DateTime                 @default(now())
+  updatedAt               DateTime                 @default(now()) @updatedAt
+}
+
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+
+model Trainingqualifications {
+  id          Int       @id @default(autoincrement())
+  name        String
+  description String
+  trainers    Trainers? @relation(fields: [trainersid], references: [id])
+  trainersid  Int?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @default(now()) @updatedAt
+}
+
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+
+model Blankevaluationform {
+  id               Int               @id @default(autoincrement())
+  name             String
+  text             String
+  formcategories   formcategories    @default(Facilities)
+  evaluationformss Evaluationforms[]
+  createdAt        DateTime          @default(now())
+  updatedAt        DateTime          @default(now()) @updatedAt
+}
+
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+
+model Evaluationforms {
+  id                    Int                  @id @default(autoincrement())
+  evaluationdate        String
+  evaluationtext        String
+  evaluationtype        evaluationtype       @default(Exam)
+  blankevaluationform   Blankevaluationform? @relation(fields: [blankevaluationformid], references: [id])
+  blankevaluationformid Int?
+  trainingcourses       Trainingcourses?     @relation(fields: [trainingcoursesid], references: [id])
+  trainingcoursesid     Int?
+  trainers              Trainers?            @relation(fields: [trainersid], references: [id])
+  trainersid            Int?
+  evaluationanswerss    Evaluationanswers[]
+  createdAt             DateTime             @default(now())
+  updatedAt             DateTime             @default(now()) @updatedAt
+}
+
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+
+model Evaluationquestions {
+  id                  Int                 @id @default(autoincrement())
+  qusetiontext        String
+  questiondescription String
+  evaluationanswerss  Evaluationanswers[]
+  createdAt           DateTime            @default(now())
+  updatedAt           DateTime            @default(now()) @updatedAt
+}
+
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+
+model Evaluationanswers {
+  id                    Int                  @id @default(autoincrement())
+  answertext            String
+  evaluationquestions   Evaluationquestions? @relation(fields: [evaluationquestionsid], references: [id])
+  evaluationquestionsid Int?
+  evaluationforms       Evaluationforms?     @relation(fields: [evaluationformsid], references: [id])
+  evaluationformsid     Int?
+  createdAt             DateTime             @default(now())
+  updatedAt             DateTime             @default(now()) @updatedAt
+}
+
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+
+enum formcategories {
+  Facilities
+  Instructor
+  Course
+}
+
+enum evaluationtype {
+  Exam
+  Assignment
+  Feedback
+}
